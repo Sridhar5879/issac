@@ -86,4 +86,4 @@ def order_status():
 if __name__ == "__main__":
     #from waitress import serve
     #serve(app, host="127.0.0.1", port=8081)
-    app.run('host:127.0.0.1')
+    app.run('host=127.0.0.1')
