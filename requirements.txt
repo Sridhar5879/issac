@@ -10,7 +10,6 @@ cryptography==2.1.4
 docutils==0.14
 enum34==1.1.6
 Flask==1.1.1
-futures==3.3.0
 gensim==3.8.0
 Fuzzy==1.2.2
 fuzzywuzzy==0.17.0
