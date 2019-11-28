@@ -1,5 +1,6 @@
 import pandas as pd
 import nltk
+nltk.data.path.append('/app/nltk_data') 
 #nltk.download("wordnet","/app/nltk_data/")
 #nltk.download("stopwords","/app/nltk_data/")
 import warnings
