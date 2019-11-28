@@ -22,36 +22,36 @@ import pdb
 app = Flask(__name__)
 
 @app.route('/', methods=['GET','POST'])
-#def order_status():
-if request.method == 'POST':
-  #Reading the document and the relevant fields
-  df=pd.read_excel("chatbot - CGL.xlsx")
-  dfq=df['Question']
-  dfa=df['Answer']
-  dfq.head()
-  dfa.head()
-  #Lemmatization of "Questions"
-  from textblob import Word
-  dfq1 = dfq.apply(lambda x: " ".join([Word(word).lemmatize() for word in x.split()]))
-  dfq1.head()
-  #Removal of stop words
-  from nltk.corpus import stopwords
-  stop = stopwords.words('english')
-  dfq1 = dfq1.apply(lambda x: " ".join(x for x in x.split() if x not in stop))
-  dfq1.head()
+def order_status():
+  if request.method == 'POST':
+    #Reading the document and the relevant fields
+    df=pd.read_excel("chatbot - CGL.xlsx")
+    dfq=df['Question']
+    dfa=df['Answer']
+    dfq.head()
+    dfa.head()
+    #Lemmatization of "Questions"
+    from textblob import Word
+    dfq1 = dfq.apply(lambda x: " ".join([Word(word).lemmatize() for word in x.split()]))
+    dfq1.head()
+    #Removal of stop words
+    from nltk.corpus import stopwords
+    stop = stopwords.words('english')
+    dfq1 = dfq1.apply(lambda x: " ".join(x for x in x.split() if x not in stop))
+    dfq1.head()
   
-  # Changing the "Questions" to lower case
-  dfq_1 = [w.lower() for w in dfq1]
-  # "Answers" have been converted to a list
-  dfa1=[w for w in dfa]
+    # Changing the "Questions" to lower case
+    dfq_1 = [w.lower() for w in dfq1]
+    # "Answers" have been converted to a list
+    dfa1=[w for w in dfa]
       
-  #Taking the input query from user and converting it to an usable string
-  query = input('Hello, How can i assist you:\n')
-  query1 = pd.Series(query)
-  query2 = query1.apply(lambda x: " ".join([Word(word).lemmatize() for word in x.split()]))
-  query2=  [w for w in query2 if not w in stop]
-  # Method to convert a series into a String
-  def convert(s):
+    #Taking the input query from user and converting it to an usable string
+    query = input('Hello, How can i assist you:\n')
+    query1 = pd.Series(query)
+    query2 = query1.apply(lambda x: " ".join([Word(word).lemmatize() for word in x.split()]))
+    query2=  [w for w in query2 if not w in stop]
+    # Method to convert a series into a String
+    def convert(s):
     # initialization of string to ""
     new = ""
     # traverse in the string
