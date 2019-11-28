@@ -20,9 +20,10 @@ def convert(s):
   # initialization of string to ""
   new = ""
   # traverse in the string
-  for x in s:new += x+' '
+  for x in s:
+    new += x+' '
     # return string
-    return new
+  return new
 
 
 # Basic code required to run the app on heroku
