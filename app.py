@@ -4,6 +4,7 @@ import warnings
 warnings.filterwarnings("ignore")
 from fuzzywuzzy import fuzz
 from nltk.corpus import stopwords
+from nltk.corpus import wordnet
 from nltk.tokenize import word_tokenize
 from nltk.stem.porter import *
 import stemming
