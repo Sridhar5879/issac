@@ -17,7 +17,7 @@ import requests
 import pdb
 app = Flask(__name__)
 
-@app.route('/', methods=['POST'])
+@app.route('/', methods=['GET','POST'])
 def order_status():
   if request.method == 'POST':
       #Reading the document and the relevant fields
