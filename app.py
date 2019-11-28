@@ -65,7 +65,7 @@ def order_status():
     #Implementation fuzzywuzzy algorithm to find the closest match
     from fuzzywuzzy import process
     ## To Get Related questions based on ratio
-    choices_dict = {idx: el for idx, el in enumerate(dfq1)}
+    choices_dict = {idx: el for idx, el in enumerate(dfq_1)}
     Ratios = process.extract(k,choices_dict,limit=3)
     ChatReply=(tuple(Ratios[0]))
     j=(tuple(Ratios[1]))
