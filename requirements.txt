@@ -48,4 +48,4 @@ xlrd==1.2.0
 stemming==1.0.1
 wordnet==0.0.1b2
 nltk==3.4.5
-textblob==0.8.0
+textblob==0.15.2
