@@ -73,7 +73,7 @@ def order_status():
     if ChatReply[1]<70:
       aa = {}
       aa['input'] = request.form.get('ui_query')
-      aa['result'] = query2
+      aa['result'] = query1
       #aa['result'] = "Sorry but your query did not match with any of our records, please try with another query"
       print('Sorry but your query did not match with any of our records, please try with another query')
     elif ChatReply[1]>=70 and ChatReply[2] <= 48:
