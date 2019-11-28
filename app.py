@@ -1,5 +1,6 @@
 import pandas as pd
 import nltk
+nltk.download()
 import warnings
 warnings.filterwarnings("ignore")
 from fuzzywuzzy import fuzz
