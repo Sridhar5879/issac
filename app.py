@@ -22,7 +22,7 @@ import pdb
 app = Flask(__name__)
 
 @app.route('/', methods=['GET','POST'])
-def order_status():
+#def order_status():
   if request.method == 'POST':
       #Reading the document and the relevant fields
       df=pd.read_excel("chatbot - CGL.xlsx")
