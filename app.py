@@ -11,6 +11,7 @@ from nltk.corpus import wordnet
 from nltk.tokenize import word_tokenize
 from nltk.stem.porter import *
 import stemming
+from textblob import TextBlob, Word
 from stemming.porter2 import stem
 stop_words=set(stopwords.words('english'))
 
