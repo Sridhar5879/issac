@@ -1,6 +1,6 @@
 import pandas as pd
 import nltk
-nltk.download()
+nltk.download("wordnet","/nltk_data")
 import warnings
 warnings.filterwarnings("ignore")
 from fuzzywuzzy import fuzz
