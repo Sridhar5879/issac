@@ -15,6 +15,15 @@ from textblob import TextBlob, Word
 from stemming.porter2 import stem
 stop_words=set(stopwords.words('english'))
 
+# Method to convert a series into a String
+def convert(s):
+  # initialization of string to ""
+  new = ""
+  # traverse in the string
+  for x in s:new += x+' '
+    # return string
+    return new
+
 
 # Basic code required to run the app on heroku
 from flask import Flask, render_template, request, json, jsonify, make_response
@@ -52,14 +61,7 @@ def order_status():
     query1 = pd.Series(query)
     query2 = query1.apply(lambda x: " ".join([Word(word).lemmatize() for word in x.split()]))
     query2=  [w for w in query2 if not w in stop]
-    # Method to convert a series into a String
-    def convert(s):
-      # initialization of string to ""
-      new = ""
-      # traverse in the string
-      for x in s:new += x+' '
-        # return string
-      return new
+    
     # Converting query2 into a string
     k=convert(query2)
     #Implementation fuzzywuzzy algorithm to find the closest match
@@ -73,7 +75,7 @@ def order_status():
     if ChatReply[1]<70:
       aa = {}
       aa['input'] = request.form.get('ui_query')
-      aa['result'] = query1
+      aa['result'] = k
       #aa['result'] = "Sorry but your query did not match with any of our records, please try with another query"
       print('Sorry but your query did not match with any of our records, please try with another query')
     elif ChatReply[1]>=70 and ChatReply[2] <= 48:
