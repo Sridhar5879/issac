@@ -23,7 +23,6 @@ jmespath==0.9.4
 keyring==10.6.0
 keyrings.alt==3.0
 MarkupSafe==1.1.1
-nltk==3.4.4
 numpy==1.16.4
 pandas==0.24.2
 paramiko==2.0.0
@@ -48,3 +47,4 @@ Werkzeug==0.15.5
 xlrd==1.2.0
 stemming==1.0.1
 wordnet==0.0.1b2
+nltk==3.4.5
