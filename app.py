@@ -1,6 +1,7 @@
 import pandas as pd
 import nltk
 nltk.download("wordnet","/app/nltk_data/")
+nltk.download("stopwords","/app/nltk_data/")
 import warnings
 warnings.filterwarnings("ignore")
 from fuzzywuzzy import fuzz
