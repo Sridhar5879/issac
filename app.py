@@ -52,11 +52,11 @@ def order_status():
     query2=  [w for w in query2 if not w in stop]
     # Method to convert a series into a String
     def convert(s):
-    # initialization of string to ""
-    new = ""
-    # traverse in the string
-    for x in s:new += x+' '
-      # return string
+      # initialization of string to ""
+      new = ""
+      # traverse in the string
+      for x in s:new += x+' '
+        # return string
       return new
     # Converting query2 into a string
     k=convert(query2)
