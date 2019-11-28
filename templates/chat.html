@@ -58,6 +58,7 @@
         contentType: 'application/x-www-form-urlencoded',
         data: {ui_query: inputValue},
         success: function(data, textStatus, jqXHR) {
+          console.log(data)
           console.info(data);
           setTimeout(function() {
             $("#loading").hide()
