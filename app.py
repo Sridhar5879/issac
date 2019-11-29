@@ -57,8 +57,8 @@ def order_status():
     dfa1=[w for w in dfa]
       
     #Taking the input query from user and converting it to an usable string
-    query = request.form.get('ui_query')
-    #query = input('Hello, How can i assist you:\n')
+    #query = request.form.get('ui_query')
+    query = input('Hello, How can i assist you:\n')
     query1 = pd.Series(query)
     query2 = query1.apply(lambda x: " ".join([Word(word).lemmatize() for word in x.split()]))
     query2=  [w for w in query2 if not w in stop]
